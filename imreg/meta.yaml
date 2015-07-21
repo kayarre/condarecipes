@@ -1,0 +1,68 @@
+package:
+  name: imreg
+  version: "0.1"
+
+source:
+  #fn: pydicom-0.9.9.tar.gz
+  #url: https://pypi.python.org/packages/source/p/pydicom/pydicom-0.9.9.tar.gz
+  #md5: a66ca6728e69ba565ab9c8a21740eee8
+#  patches:
+   # List any patch files here
+   # - fix.patch
+  git_url: https://github.com/kayarre/imreg.git
+  #git_tag: v0.9.9
+
+# build:
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pydicom = pydicom:main
+    #
+    # Would create an entry point called pydicom that calls pydicom.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - cython
+
+  run:
+    - python
+    - numpy
+    - scipy
+test:
+  # Python imports
+  imports:
+    - imreg
+    - imreg.register
+    - imreg.sampler
+    - imreg.model
+    - imreg.metric
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    #- numpy
+
+about:
+  home: http://pydicom.org/
+  license: Apache License 2.0
+  summary: 'python package for image registration.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
