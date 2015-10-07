@@ -1,0 +1,28 @@
+package:
+  name: pyevtk
+  version: 1.0.0
+
+source:
+  hg_url: https://bitbucket.org/kayarre/pyevtk
+  hg_tag: tip
+
+requirements:
+  build:
+    - python
+    - numpy
+
+  run:
+    - python
+    - numpy
+
+test:
+  imports:
+    - evtk
+    - evtk.hl
+    - evtk.xml
+    - evtk.vtk
+
+about:
+  home: https://bitbucket.org/pauloh/pyevtk
+  license: UNKNOWN
+  summary: 'Export data as binary VTK files'
