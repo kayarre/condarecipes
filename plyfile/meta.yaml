@@ -1,0 +1,63 @@
+package:
+  name: plyfile
+  version: "master"
+
+source:
+  #  patches:
+  # List any patch files here
+  # - fix.patch
+  git_url: https://github.com/dranjan/python-plyfile.git
+  #git_tag: v0.4
+  git_rev: master
+
+# build:
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pydicom = pydicom:main
+    #
+    # Would create an entry point called pydicom that calls pydicom.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - numpy
+
+  run:
+    - python
+    - numpy
+
+test:
+  # Python imports
+  imports:
+    - plyfile
+
+  #commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+    #- tox -v tox.ini
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  #requires:
+    # Put any additional test requirements here.  For example
+    #- numpy
+
+about:
+  home: https://github.com/dranjan/python-plyfile
+  license: GNU General Public License, version 3.
+  summary: 'plyfile provides a simple facility for reading and writing ASCII and binary PLY files.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
