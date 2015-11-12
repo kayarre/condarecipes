@@ -43,6 +43,8 @@ cmake \
     -D "PYTHON_EXECUTABLE:FILEPATH=${PYTHON}" \
     -D "PYTHON_INCLUDE_DIR:PATH=$PREFIX/include/python${MY_PY_VER}" \
     -D "PYTHON_LIBRARY:FILEPATH=$PREFIX/lib/libpython${MY_PY_VER}.${SO_EXT}" \
+    -D CMAKE_CXX_COMPILER:STRING=/usr/bin/g++ \
+    -D CMAKE_C_COMPILER:STRING=/usr/bin/gcc \
     "${SRC_DIR}/SuperBuild"
 
 make -j ${CORES}
