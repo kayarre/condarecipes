@@ -30,5 +30,5 @@ test:
 
 about:
   home: http://github.com/mhe/pynrrd
-  license: https://github.com/mhe/pynrrd/blob/master/LICENSE
+  license: MIT License
   summary: pynrrd is a pure-Python module for reading and writing nrrd files into and from numpy arrays.
