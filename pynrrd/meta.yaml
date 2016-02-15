@@ -1,0 +1,34 @@
+package:
+  name: pynrrd
+  version: 0.2.1
+
+source:
+  #fn: pydicom-0.9.9.tar.gz
+  #url: https://pypi.python.org/packages/source/p/pydicom/pydicom-0.9.9.tar.gz
+  #md5: a66ca6728e69ba565ab9c8a21740eee8
+#  patches:
+   # List any patch files here
+   # - fix.patch
+  git_url: https://github.com/mhe/pynrrd.git
+  git_tag: master
+  #git_tag: v0.9.9
+
+requirements:
+  build:
+    - python
+    - pip
+    - numpy
+
+  run:
+    - python
+    - numpy
+
+test:
+  # Python imports
+  imports:
+    - nrrd
+
+about:
+  home: http://github.com/mhe/pynrrd
+  license: https://github.com/mhe/pynrrd/blob/master/LICENSE
+  summary: pynrrd is a pure-Python module for reading and writing nrrd files into and from numpy arrays.
