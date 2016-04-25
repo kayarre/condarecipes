@@ -1,0 +1,45 @@
+package:
+  name: pycuda
+  version: "2016.1"
+
+source:
+  #fn: pycuda-2013.1.1.tar.gz
+  #url: https://pypi.python.org/packages/source/p/pycuda/pycuda-2013.1.1.tar.gz
+  #md5: acf9319ab2970d9700ed6486aa87b708
+  git_url: https://github.com/inducer/pycuda.git
+  #git_rev: master
+  git_tag: v2016.1
+  
+build:
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  number: 0
+  #preserve_egg_dir: yes
+
+requirements:
+  build:
+    - python 
+    #- distribute
+    - setuptools
+    - mako
+    - numpy >=1.6
+    - decorator >=3.2.0
+    - pytest >=2
+    - pytools >=2011.2
+
+  run:
+    - python 
+    - mako
+    - decorator >=3.2.0
+    - numpy >=1.6
+    - pytools >=2011.2
+
+test:
+  imports:
+    #- pycuda
+
+
+about:
+  home: http://mathema.tician.de/software/pycuda/
+  license: MIT
+  summary: "access Nvidia's CUDA parallel computation API from Python."

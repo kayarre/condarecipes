@@ -1,0 +1,29 @@
+package:
+  name: cgns
+  #version: 3.3.0
+  version: master
+
+source:
+  #fn: 
+  #url: 
+  git_url: https://github.com/CGNS/CGNS.git
+  git_rev: master
+  #git_tag: v3.3.0
+
+build:
+  number: 0
+  binary_relocation: true
+
+requirements:
+  build:
+    - cmake >=3.1
+    - gcc
+    - hdf5
+  run:
+    - libgcc
+    - hdf5
+
+about:
+  home: http://glaros.dtc.umn.edu/gkhome/metis/metis/overview
+  license: Apache 2.0
+  summary: Serial Graph Partitioning and Fill-reducing Matrix Ordering
