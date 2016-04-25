@@ -1,6 +1,6 @@
 package:
   name: pyopencl
-  version: "master"
+  version: "2016.1"
 
 source:
   #fn: pyopencl-2015.2.4.tar.gz

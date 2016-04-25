@@ -1,7 +1,7 @@
 package:
   name: cgns
-  #version: 3.3.0
-  version: master
+  version: 3.3.0
+
 
 source:
   #fn: 

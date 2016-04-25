@@ -18,8 +18,7 @@ build:
 
 requirements:
   build:
-    - python 
-    #- distribute
+    - python
     - setuptools
     - mako
     - numpy >=1.6
