@@ -1,6 +1,6 @@
 package:
   name: peakutils
-  version: "1.0.1"
+  version: "1.0.3"
 
 source:
   #fn: PeakUtils-1.0.1.tar.gz
