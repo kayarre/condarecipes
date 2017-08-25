@@ -4,11 +4,11 @@
 # ------------------------------------------------
 
 package:
-    name: pipdated
-    version: v0.1.8
+    name: pipdate
+    version: 0.2.0
 source:
-    git_url: https://github.com/nschloe/pipdated.git
-    git_tag: v0.1.8
+    git_url: https://github.com/nschloe/pipdate.git
+    git_tag: v0.2.0
 build:
     number: '0'
 requirements:
@@ -22,8 +22,8 @@ requirements:
 
 test:
     imports:
-        - pipdated
+        - pipdate
 about:
-    home: https://github.com/nschloe/pipdated.git
+    home: https://github.com/nschloe/pipdate.git
     license: MIT License
     summary: check for updates on PyPi

@@ -5,7 +5,7 @@
 
 package:
     name: meshio
-    version: v1.8.10
+    version: 1.8.14
 source:
     git_url: https://github.com/kayarre/meshio.git
 build:
@@ -13,14 +13,14 @@ build:
 requirements:
     build:
         - python
-        - pipdated
+        - pipdate
         #- h5py
         #- vtk
         - numpy
         - setuptools
     run:
         - python
-        - pipdated
+        - pipdate
         - h5py
         #- vtk # vtk package not updated for vtk > 6 for py3
         - numpy
