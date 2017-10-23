@@ -5,7 +5,7 @@
 
 package:
     name: meshio
-    version: 1.8.14
+    version: 1.8.16
 source:
     git_url: https://github.com/kayarre/meshio.git
 build:
