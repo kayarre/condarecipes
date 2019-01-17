@@ -1,29 +1,47 @@
-    # This file created by conda-build 2.0.7
-    # meta.yaml template originally from:
-    # /Users/sansomk/code/python/condarecipes/meshio, last modified Mon Oct 24 23:38:15 2016
-    # ------------------------------------------------
+{% set name = "pipdate" %}
+{% set version = "0.3.3" %}
 
-    package:
-        name: pipdate
-        version: 0.3.2
-    source:
-        git_url: https://github.com/nschloe/pipdate.git
-        git_tag: v0.3.2
-    build:
-        number: '0'
-    requirements:
-        build:
-            - python
-            - appdirs
-            - requests
-        run:
-            - appdirs
-            - requests
-    #test:
-    #    imports:
-    #        - pipdate # this fails for some reason?
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
 
-    about:
-        home: https://github.com/nschloe/pipdate.git
-        license: MIT License
-        summary: check for updates on PyPi
+source:
+  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  #sha256: 7f05295a758eb69eda760f1cb7a2b151f74ca5eb22ff215af3b3e019d1d24c4e
+  git_url: https://github.com/nschloe/pipdate.git
+  #git_tag: v0.3.3
+  git_rev: master
+
+build:
+  number: 0
+  #entry_points:
+  #  - meshio-convert = meshio.cli:main
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+
+requirements:
+  host:
+    - python
+    - appdirs
+    - pip
+    - requests
+  run:
+    - appdirs
+    - requests
+test:
+  imports:
+    - pipdate
+  #commands:
+
+
+about:
+  home: https://github.com/nschloe/pipdate.git
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: check for updates on PyPi
+  doc_url: 
+  dev_url:
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here

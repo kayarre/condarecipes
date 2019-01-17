@@ -1,34 +1,51 @@
-# This file created by conda-build 2.0.7
-# meta.yaml template originally from:
-# /Users/sansomk/code/python/condarecipes/meshio, last modified Mon Oct 24 23:38:15 2016
-# ------------------------------------------------
+{% set name = "meshio" %}
+{% set version = "2.3.3" %}
 
 package:
-    name: meshio
-    version: 1.10.3
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
 source:
-    git_url: https://github.com/kayarre/meshio.git
+  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  #sha256: 7f05295a758eb69eda760f1cb7a2b151f74ca5eb22ff215af3b3e019d1d24c4e
+  git_url: https://github.com/kayarre/meshio.git
+  git_rev: master
+
 build:
-    number: '0'
+  number: 0
+  entry_points:
+    - meshio-convert = meshio.cli:main
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+
 requirements:
-    build:
-        - python
-        - pipdate
-        #- h5py
-        #- vtk
-        - numpy
-        - setuptools
-    run:
-        - python
-        - pipdate
-        - h5py
-        #- vtk # vtk package not updated for vtk > 6 for py3
-        - numpy
-        - lxml
+  host:
+    - numpy
+    - pip
+    - pip
+    - pipdate
+    - python
+  run:
+    - numpy
+    - pipdate
+    - python
+
 test:
-    imports:
-        - meshio
+  imports:
+    - meshio
+    - meshio.msh_io
+  commands:
+    - meshio-convert --help
+
 about:
-    home: https://github.com/nschloe/meshio
-    license: MIT License
-    summary: I/O for various mesh formats
+  home: https://github.com/nschloe/meshio
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: I/O for various mesh formats
+  doc_url: 
+  dev_url:
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
+

@@ -1,6 +1,6 @@
 package:
   name: pynrrd
-  version: 0.2.1
+  version: 0.3.6
 
 source:
   #fn: pydicom-0.9.9.tar.gz
