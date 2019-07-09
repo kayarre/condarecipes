@@ -1,0 +1,48 @@
+{% set name = "pygmsh" %}
+{% set version = "5.0.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  #url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  #sha256: "ff9dc325b41cb6734ea141cb94d18741d1dbba0a2503102d7c91f01e9b02d6ad"
+  git_url: https://github.com/kayarre/pygmsh.git
+  git_rev: master
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - meshio >=2.0
+    - numpy >=1.9
+    - pip
+    - python
+    - pipdate >=0.3.0
+  run:
+    - meshio >=2.0
+    - numpy >=1.9
+    - python
+    - pipdate >=0.3.0
+
+test:
+  imports:
+    - pygmsh
+    - pygmsh.built_in
+    - pygmsh.opencascade
+
+about:
+  home: "https://github.com/nschloe/pygmsh"
+  license: "MIT"
+  license_family: "MIT"
+  license_file: ""
+  summary: "Python frontend for Gmsh"
+  doc_url: ""
+  dev_url: ""
+
+extra:
+  recipe-maintainers:
+    - kayarre
