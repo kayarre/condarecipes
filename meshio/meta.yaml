@@ -1,5 +1,5 @@
 {% set name = "meshio" %}
-{% set version = "2.3.3" %}
+{% set version = "2.3.10" %}
 
 package:
   name: "{{ name|lower }}"
@@ -21,13 +21,15 @@ requirements:
   host:
     - numpy
     - pip
-    - pip
     - pipdate
     - python
   run:
     - numpy
     - pipdate
     - python
+    - lxml
+    - h5py
+    - netCDF4
 
 test:
   imports:
@@ -47,5 +49,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - your-github-id-here
-
+    - kayarre
