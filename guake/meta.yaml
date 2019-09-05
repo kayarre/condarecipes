@@ -1,0 +1,59 @@
+{% set name = "guake" %}
+{% set version = "3.6.3" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  #url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  #sha256: "dabfb58070c721b3e2d8fc9621afdd9de74ed7929d2453a9d08058baab5b7791"
+  git_url: https://github.com/Guake/guake.git
+  git_rev: master
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - pip
+    - python
+    - pbr
+  run:
+    - python
+    - pbr
+
+  # test:
+  #   - astroid
+  #   - autopep8
+  #   - colorlog
+  #   - mock
+  #   - pathlib2
+  #   - pep8
+  #   - pyfakefs
+  #   - pyflakes
+  #   -
+  #   - pylint
+  #   - pytest
+  #   - pytest-cov
+  #   - pytest-mock
+  #   - reno
+  #   - scandir
+  #   - sphinx-rtd-theme
+  #   - twine
+  #   - typed-ast
+  #   - yapf
+
+about:
+  home: "http://guake-project.org"
+  license: "GNU General Public v2 (GPLv2)"
+  license_family: "GPL2"
+  license_file: "COPYING"
+  summary: "Guake is a dropdown terminal made for the GNOME desktop environment."
+  doc_url: ""
+  dev_url: ""
+
+extra:
+  recipe-maintainers:
+    - kayarre
