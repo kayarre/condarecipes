@@ -1,5 +1,5 @@
 {% set name = "meshio" %}
-{% set version = "2.3.10" %}
+{% set version = "3.2.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   entry_points:
-    - meshio-convert = meshio.cli:main
+    - meshio-convert = meshio._cli:main
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
 
 requirements:
@@ -34,7 +34,7 @@ requirements:
 test:
   imports:
     - meshio
-    - meshio.msh_io
+    - meshio._cli
   commands:
     - meshio-convert --help
 
